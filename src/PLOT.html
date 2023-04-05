@@ -5,9 +5,10 @@
   <meta charset="utf-8">
   <title>math.js | plot</title>
   <script src="https://unpkg.com/mathjs@11.8.0/lib/browser/math.js"></script>
-  <script src="https://cdn.plot.ly/plotly-1.35.2.min.js"></script>
   <script src="../components/plot.js"></script>
-
+  <!-- Load plotly.js into the DOM -->
+  <script src='https://cdn.plot.ly/plotly-2.20.0.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
 
   <style>
     input[type=text] {
@@ -41,7 +42,7 @@
   </form>
 
   <div id="plot"></div>
-
+  <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
 
 
 
