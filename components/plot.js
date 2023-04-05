@@ -1,5 +1,5 @@
 function draw() {
- document.addEventListener("DOMContentLoaded",()=>{
+
  try {
    // compile the expression once
    const expression = document.getElementById('eq').value
@@ -30,9 +30,10 @@ function draw() {
    event.preventDefault();
    draw();
   }
- });
+ 
 }
 
 
-
+document.addEventListener("DOMContentLoaded",()=>{
 draw();
+});
