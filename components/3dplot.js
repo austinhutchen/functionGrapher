@@ -24,10 +24,10 @@ var trace2 = {
 };
 
 var layout = {
-  scene: {
-    xaxis: { title: "X AXIS TITLE" },
-    yaxis: { title: "Y AXIS TITLE" },
-    zaxis: { title: "Z AXIS TITLE" }
+  scene: { 
+    xaxis: { title: "X VECTOR" },
+    yaxis: { title: "Y VECTOR" },
+    zaxis: { title: "Z VECTOR" }
   },
   autosize: false,
   width: 550,
