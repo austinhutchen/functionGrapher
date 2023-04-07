@@ -156,53 +156,41 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 var data = [
+  {
+    type: "isosurface",
 
- {
+    x: [0, 0, 0, 0, 1, 1, 1, 1],
 
-     type: "isosurface",
+    y: [0, 1, 0, 1, 0, 1, 0, 1],
 
-     x: [0,0,0,0,1,1,1,1],
+    z: [1, 1, 0, 0, 1, 1, 0, 0],
 
-     y: [0,1,0,1,0,1,0,1],
+    value: [1, 2, 3, 4, 5, 6, 7, 8],
 
-     z: [1,1,0,0,1,1,0,0],
+    isomin: 2,
 
-     value: [1,2,3,4,5,6,7,8],
+    isomax: 6,
 
-     isomin: 2,
-
-     isomax: 6,
-
-     colorscale: "Reds"
-
- }
-
+    colorscale: "Reds",
+  },
 ];
 
-
 var layout = {
+  margin: { t: 0, l: 0, b: 0 },
 
- margin: {t:0, l:0, b:0},
+  scene: {
+    camera: {
+      eye: {
+        x: 1.88,
 
- scene: {
+        y: -2.12,
 
-     camera: {
-
-         eye: {
-
-             x: 1.88,
-
-             y: -2.12,
-
-             z: 0.96
-
-         }
-
-     }
-
- }
-
+        z: 0.96,
+      },
+    },
+  },
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-Plotly.newPlot('myDiv4', data, layout, {showSendToCloud: true});});
+  Plotly.newPlot("myDiv4", data, layout, { showSendToCloud: true });
+});
