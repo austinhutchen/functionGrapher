@@ -12,37 +12,14 @@
   <script src="../components/3dplot.js"></script>
   <!-- Load plotly.js into the DOM -->
 </head>
-<style>
-  input[type=text] {
-    width: 300px;
-  }
-
-  input {
-    padding: 6px;
-  }
-
-  body,
-  html,
-  input {
-    font-family: sans-serif;
-    font-size: 11pt;
-
-  }
-
-  form {
-    margin: 20px 0;
-  }
-</style>
 
 
-
-
+<div id ="page">
 <form id="form">
   <label for="eq">Enter an equation:</label>
   <input type="text" id="eq" value="4 * sin(x) + 5 * cos(x/2)" />
   <input type="submit" value="Draw" />
 </form>
-
 <body id="body">
     <div id="plot"></div>
   <div id="container">
@@ -57,6 +34,11 @@
   </div>
 
 
+</div>
+
+
 </body>
+
+
 
 </html>
