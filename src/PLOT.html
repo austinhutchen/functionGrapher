@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>math.js | plot</title>
+  <style rel="stylesheet" href="./styles.css"></style>
   <script src="https://unpkg.com/mathjs@11.8.0/lib/browser/math.js"></script>
   <script src='https://cdn.plot.ly/plotly-2.20.0.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
@@ -34,20 +35,21 @@
 </style>
 
 
-<body>
 
-  <form id="form">
-    <label for="eq">Enter an equation:</label>
-    <input type="text" id="eq" value="4 * sin(x) + 5 * cos(x/2)" />
-    <input type="submit" value="Draw" />
-  </form>
 
+<form id="form">
+  <label for="eq">Enter an equation:</label>
+  <input type="text" id="eq" value="4 * sin(x) + 5 * cos(x/2)" />
+  <input type="submit" value="Draw" />
+</form>
+
+<body id="body">
   <div id="plot"></div>
+    <div id='myDiv4'><!-- Plotly chart will be drawn inside this DIV --></div>
+
+  <div id='myDiv3'><!-- Plotly chart will be drawn inside this DIV --></div>
   <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
-
-
-
-
+  <div id='myDiv2'><!-- Plotly chart will be drawn inside this DIV --></div>
 </body>
 
 </html>
