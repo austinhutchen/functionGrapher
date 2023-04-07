@@ -2,7 +2,15 @@ body {
  text-align: center;
 
  justify-content: center;
+display:inline-block;
 
+
+}
+.container {
+ text-align: center;
+
+ justify-content: center;
+display:inline-block;
 
 
 }
