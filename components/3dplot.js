@@ -1,162 +1,88 @@
-getrandom = (num, mul) => {
-  var value = [];
-  for (i = 0; i <= num; i++) {
-    var rand = Math.random() * mul;
-    value.push(rand);
-  }
-  return value;
-};
+d3.csv(
+  "https://raw.githubusercontent.com/plotly/datasets/master/_3d-line-plot.csv",
+  function (err, rows) {
+    function unpack(rows, key) {
+      return rows.map(function (row) {
+        return row[key];
+      });
+    }
 
-var trace1 = {
-  type: "mesh3d",
-  x: getrandom(1000, 200),
-  y: getrandom(1000, 300),
-  z: getrandom(1000, 150),
-  color: "lightblue",
-};
-
-var trace2 = {
-  type: "mesh3d",
-  x: getrandom(1000, 200),
-  y: getrandom(1000, 300),
-  z: getrandom(1000, 150),
-  color: "pink",
-};
-
-var layout = {
-  scene: {
-    xaxis: { title: "X VECTOR" },
-    yaxis: { title: "Y VECTOR" },
-    zaxis: { title: "Z VECTOR" },
-  },
-  autosize: false,
-  width: 550,
-  height: 500,
-  margin: {
-    l: 0,
-    r: 0,
-    b: 50,
-    t: 50,
-    pad: 4,
-  },
-};
-
-document.addEventListener("DOMContentLoaded", () => {
-  Plotly.newPlot("myDiv", [trace1, trace2], layout);
-});
-
-var pointCount = 3142;
-
-var i, r;
-
-var x = [];
-
-var y = [];
-
-var z = [];
-
-var c = [];
-
-for (i = 0; i < pointCount; i++) {
-  r = i * (pointCount - i);
-
-  x.push(r * Math.cos(i / 30));
-
-  y.push(r * Math.sin(i / 30));
-
-  z.push(i);
-
-  c.push(i);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  Plotly.newPlot("myDiv2", [
-    {
-      type: "scatter3d",
-
+    var trace1 = {
+      x: unpack(rows, "x1"),
+      y: unpack(rows, "y1"),
+      z: unpack(rows, "z1"),
       mode: "lines",
-
-      x: x,
-
-      y: y,
-
-      z: z,
-
-      opacity: 0.7,
-
-      line: {
-        width: 10,
-
-        color: c,
-
-        colorscale: "Viridis",
-      },
-    },
-  ]);
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  var pointCount = 31;
-
-  var i, r;
-
-  var x = [];
-
-  var y = [];
-
-  var z = [];
-
-  var c = [];
-
-  for (i = 0; i < pointCount; i++) {
-    r = 10 * Math.cos(i / 10);
-
-    x.push(r * Math.cos(i));
-
-    y.push(r * Math.sin(i));
-
-    z.push(i);
-
-    c.push(i);
-  }
-
-  Plotly.newPlot("myDiv3", [
-    {
-      type: "scatter3d",
-
-      mode: "lines+markers",
-
-      x: x,
-
-      y: y,
-
-      z: z,
-
-      line: {
-        width: 6,
-
-        color: c,
-
-        colorscale: "Viridis",
-      },
-
       marker: {
-        size: 3.5,
-
-        color: c,
-
-        colorscale: "Greens",
-
-        cmin: -20,
-
-        cmax: 50,
+        color: "#1f77b4",
+        size: 12,
+        symbol: "circle",
+        line: {
+          color: "rgb(0,0,0)",
+          width: 0,
+        },
       },
-    },
-  ]);
-});
+      line: {
+        color: "#1f77b4",
+        width: 1,
+      },
+      type: "scatter3d",
+    };
 
+    var trace2 = {
+      x: unpack(rows, "x2"),
+      y: unpack(rows, "y2"),
+      z: unpack(rows, "z2"),
+      mode: "lines",
+      marker: {
+        color: "#9467bd",
+        size: 12,
+        symbol: "circle",
+        line: {
+          color: "rgb(0,0,0)",
+          width: 0,
+        },
+      },
+      line: {
+        color: "rgb(44, 160, 44)",
+        width: 1,
+      },
+      type: "scatter3d",
+    };
 
+    var trace3 = {
+      x: unpack(rows, "x3"),
+      y: unpack(rows, "y3"),
+      z: unpack(rows, "z3"),
+      mode: "lines",
+      marker: {
+        color: "#bcbd22",
+        size: 12,
+        symbol: "circle",
+        line: {
+          color: "rgb(0,0,0)",
+          width: 0,
+        },
+      },
+      line: {
+        color: "#bcbd22",
+        width: 1,
+      },
+      type: "scatter3d",
+    };
 
-
-
-
+    var data = [trace1, trace2, trace3];
+    var layout = {
+      title: "3D Line Plot",
+      autosize: false,
+      width: 500,
+      height: 500,
+      margin: {
+        l: 0,
+        r: 0,
+        b: 0,
+        t: 65,
+      },
+    };
+    Plotly.newPlot("myDiv", data, layout);
+  }
+);
