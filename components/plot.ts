@@ -1,12 +1,15 @@
-function draw() {
+declare const math: any;
+declare const Plotly: any;
+
+function draw(): void {
   try {
     // compile the expression once
-    const expression = document.getElementById("eq").value;
+    const expression: string = (document.getElementById("eq") as HTMLInputElement).value;
     const expr = math.compile(expression);
 
     // evaluate the expression repeatedly for different values of x
-    const xValues = math.range(-10, 10, 0.5).toArray();
-    const yValues = xValues.map(function (x) {
+    const xValues: number[] = math.range(-10, 10, 0.5).toArray();
+    const yValues: number[] = xValues.map(function (x: number) {
       return expr.evaluate({ x: x });
     });
 
@@ -18,12 +21,12 @@ function draw() {
     };
     const data = [trace1];
     Plotly.newPlot("plot", data);
-  } catch (err) {
+  } catch (err: any) {
     console.error(err);
     alert(err);
   }
 
-  document.getElementById("form").onsubmit = function (event) {
+  (document.getElementById("form") as HTMLFormElement).onsubmit = function (event: Event) {
     event.preventDefault();
     draw();
   };
