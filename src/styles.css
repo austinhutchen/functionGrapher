@@ -1,66 +1,89 @@
+/* Center container and align items */
 .container {
-	text-align: center;
-
-	justify-content: center;
-	display: inline-flex;
-
-
+    text-align: center;
+    justify-content: center;
+    display: flex; /* Changed to flex for better alignment */
+    flex-direction: column; /* Ensure items stack properly */
+    align-items: center; /* Center items horizontally */
+    margin: 0 auto; /* Center container on the page */
 }
 
-
-input[type=text] {
-	width: 300px;
+/* Input styles for responsiveness */
+input[type="text"] {
+    width: 100%; /* Full width on smaller screens */
+    max-width: 300px; /* Limit maximum width */
+    padding: 5px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
+/* Table styles for consistency */
 table {
-	border: 2px solid black;
-	border-collapse: collapse;
-	padding: 3px;
-	width: 100%;
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 100%; /* Full width */
+    margin: 20px 0; /* Add spacing */
+    background-color: #fff; /* Ensure table has a clean background */
 }
 
 tr,
 th,
 td {
-	border: 2px solid black;
-	border-collapse: collapse;
-	padding: 3px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+    text-align: center; /* Center-align table content */
+    font-size: 12pt;
 }
 
 .aligntop {
-	vertical-align: top;
+    vertical-align: top;
 }
 
 .description {
-	font-size: 14px;
-	font-weight: bold;
-
-	vertical-align: middle;
-	text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .size {
-	text-align: center;
+    text-align: center;
 }
 
 .center {
-	align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ensure centering within containers */
 }
 
+/* Body and HTML styles for consistent typography */
 body {
-	line-height: 1.6;
-	text-align: center;
-	font-family: sans-serif;
-	font-size: 11pt;
-	background-color: olivedrab;
+    line-height: 1.6;
+    text-align: center;
+    font-family: 'Arial', sans-serif; /* Modern, sans-serif font */
+    font-size: 14px;
+    background-color: #6B8E23; /* Softer olive drab for improved readability */
+    color: #fff; /* White text for better contrast */
+    margin: 0;
+    padding: 0;
 }
 
 html {
-	font-family: sans-serif;
-	font-size: 11pt;
-
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
 }
 
+/* Form styling for consistency */
 form {
-	margin: 20px 0;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Light background for better readability */
+    width: 90%; /* Responsive form width */
+    max-width: 500px; /* Limit form width */
+    text-align: center;
 }
