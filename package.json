@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "mathjs": "^14.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}

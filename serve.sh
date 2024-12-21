@@ -1,1 +1,1 @@
-exec http-server
+{ cd src; http-server; }&
