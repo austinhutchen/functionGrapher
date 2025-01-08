@@ -1,9 +1,12 @@
 {
   "dependencies": {
-    "mathjs": "^14.0.1"
+    "mathjs": "^14.0.1",
+    "plotly.js-dist": "^2.35.3"
   },
   "devDependencies": {
+    "@types/mathjs": "^9.4.1",
     "@types/node": "^22.10.2",
+    "@types/plotly.js": "^2.35.1",
     "typescript": "^5.7.2"
   }
 }
