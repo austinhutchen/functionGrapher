@@ -8,20 +8,16 @@
   <script src="https://unpkg.com/mathjs@11.8.0/lib/browser/math.js"></script>
   <script src='https://cdn.plot.ly/plotly-2.20.0.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
-  <script src="./plot.js"></script>
+  <script src="./index.js"></script>
   <!-- Load plotly.js into the DOM -->
 </head>
 
 
 <div class="page">
-
-
   <body id="body">
-
-
     <form id="form">
       <label for="eq">Enter an equation:</label>
-      <input type="text" id="eq" value="x^(1/2)" />
+      <input type="text" id="eq" value="asin(x^(1/2))" />
       <input type="submit" value="Draw" />
     </form>
     <div id="plot"></div>
@@ -31,7 +27,7 @@
     <table>
       <tbody>
         <tr>
-          <div id="myDiv" class="center">
+          <div id="myDiv" class="plotly-graph">
         </tr>
       </tbody>
     </table>

@@ -1,89 +1,92 @@
-/* Center container and align items */
+/* General container styles */
 .container {
-    text-align: center;
-    justify-content: center;
-    display: flex; /* Changed to flex for better alignment */
-    flex-direction: column; /* Ensure items stack properly */
-    align-items: center; /* Center items horizontally */
-    margin: 0 auto; /* Center container on the page */
+  display: grid; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  text-align: center;
+  margin: 0 auto; /* Center container on the page */
+  padding: 20px; /* Add some spacing around the content */
+  max-width: 50vw; /* Prevent content from overflowing horizontally */
 }
 
-/* Input styles for responsiveness */
+/* Responsive input field */
 input[type="text"] {
-    width: 100%; /* Full width on smaller screens */
-    max-width: 300px; /* Limit maximum width */
-    padding: 5px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 40vw; /* Limit width on larger screens */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem; /* Scalable font size */
 }
 
-/* Table styles for consistency */
+/* Responsive table */
 table {
-    border: 2px solid black;
-    border-collapse: collapse;
-    width: 100%; /* Full width */
-    margin: 20px 0; /* Add spacing */
-    background-color: #fff; /* Ensure table has a clean background */
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 100%; /* Full width */
+  max-width: 55vw; /* Prevent overflow on small screens */
+  margin: 20px 0;
+  background-color: #fff;
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
 }
 
 tr,
 th,
 td {
-    border: 2px solid black;
-    border-collapse: collapse;
-    padding: 8px;
-    text-align: center; /* Center-align table content */
-    font-size: 12pt;
+  border: 2px solid black;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.9rem; /* Slightly smaller font for better fit */
+  word-wrap: break-word; /* Prevent overflow of long text */
 }
 
-.aligntop {
-    vertical-align: top;
-}
-
+/* Description styles */
 .description {
-    font-size: 14px;
-    font-weight: bold;
-    vertical-align: middle;
-    text-align: center;
+  font-size: 1rem; /* Scalable font size */
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
 }
 
-.size {
-    text-align: center;
-}
-
+/* Center alignment */
 .center {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Ensure centering within containers */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
-/* Body and HTML styles for consistent typography */
+/* Body and HTML styles */
 body {
-    line-height: 1.6;
-    text-align: center;
-    font-family: 'Arial', sans-serif; /* Modern, sans-serif font */
-    font-size: 14px;
-    background-color: #6B8E23; /* Softer olive drab for improved readability */
-    color: #fff; /* White text for better contrast */
-    margin: 0;
-    padding: 0;
+  line-height: 1.6;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  background-color: #6B8E23;
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
-html {
-    font-family: 'Arial', sans-serif;
-    font-size: 14px;
-}
-
-/* Form styling for consistency */
+/* Form styling */
 form {
-    margin: 20px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9; /* Light background for better readability */
-    width: 90%; /* Responsive form width */
-    max-width: 500px; /* Limit form width */
-    text-align: center;
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  max-width: 60svw; /* Limit width on larger screens */
+  width: 100%; /* Full width on smaller screens */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center;
 }
+
+/* Plotly graph responsiveness */
+.plotly-graph {
+  width: 100%; /* Ensure the graph scales to container width */
+  max-width: 80svw; /* Prevent overflow on smaller screens */
+  height: 100%; /* Maintain aspect ratio */
+}
+
+

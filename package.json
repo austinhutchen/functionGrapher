@@ -3,6 +3,7 @@
     "mathjs": "^14.0.1",
     "plotly.js-dist": "^2.35.3"
   },
+  "main":"map.ts",
   "devDependencies": {
     "@types/mathjs": "^9.4.1",
     "@types/node": "^22.10.2",
